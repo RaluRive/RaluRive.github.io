@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mi primer videojuego con HTML5 Canvas y JavaScript</title>
+    <script src="Naves.js"></script>
+    <style>
+        canvas {
+            background: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="display: flex;justify-content: center;">
+        <div style="text-align: center;">
+        <div>
+            <h2 id="puntos" style="display: inline-block;">Puntos: 0</h2>
+        <h2 id="velocidad" style="display: inline-block;margin-left: 30px;">Velocidad: 3</h2>
+        <h2 id="vidas" style="display: inline-block;margin-left: 30px;">Vidas: 3</h2>
+        </div>
+        
+        <form action="" style="display: block;">
+            <input type="submit" value="Reiniciar">
+        </form>
+        <div>
+            <canvas id="espacio" height="400" width="600" style="border: 1px solid #c3c3c3;"></canvas>
+        </div>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: center;">
+        <table>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="button" id="w" onmousedown="moverBoton('w')" onmouseleave="detenerBoton()"
+                        onmouseup="detenerBoton()">
+                        <h2>^</h2>
+                    </button>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" id="a" onmousedown="moverBoton('a')" onmouseleave="detenerBoton()"
+                        onmouseup="detenerBoton()">
+                        <h2><</h2>
+                    </button>
+                </td>
+                <td>
+                    <button type="button" id="s" onmousedown="moverBoton('s')" onmouseleave="detenerBoton()"
+                        onmouseup="detenerBoton()">
+                        <h2>\/</h2>
+                    </button>
+                </td>
+                <td>
+                    <button type="button" id="d" onmousedown="moverBoton('d')" onmouseleave="detenerBoton()"
+                        onmouseup="detenerBoton()">
+                        <h2>></h2>
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script>
+
+        let botonA, botonW, botonD, botonS;
+        botonA = document.getElementById("a");
+        botonW = document.getElementById("w");
+        botonD = document.getElementById("d");
+        botonS = document.getElementById("s");
+        botonA.addEventListener("touchstart", () => {
+            moverBoton('a');
+        }, { passive: true });
+        botonS.addEventListener("touchstart", () => {
+            moverBoton('s');
+        }, { passive: true });
+        botonD.addEventListener("touchstart", () => {
+            moverBoton('d');
+        }, { passive: true });
+        botonW.addEventListener("touchstart", () => {
+            moverBoton('w');
+        }, { passive: true });
+        botonA.addEventListener("touchcancel", () => {
+            detenerBoton();
+        })
+        botonS.addEventListener("touchcancel", () => {
+            detenerBoton();
+        })
+        botonD.addEventListener("touchcancel", () => {
+            detenerBoton();
+        })
+        botonW.addEventListener("touchcancel", () => {
+            detenerBoton();
+        })
+
+        botonA.addEventListener("touchend", () => {
+            detenerBoton();
+        })
+        botonS.addEventListener("touchend", () => {
+            detenerBoton();
+        })
+        botonD.addEventListener("touchend", () => {
+            detenerBoton();
+        })
+        botonW.addEventListener("touchend", () => {
+            detenerBoton();
+        })
+    </script>
+</body>
+
+</html>
