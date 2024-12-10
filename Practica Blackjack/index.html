@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<title>BlackJack</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+	<!-- Estilos locales -->
+	<!-- <link href="css/blackjack.css" rel="stylesheet" /> -->
+	<script src="js/juego.js"></script>
+</head>
+
+<body> <!-- Header -->
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+			<div class="container"> <a class="navbar-brand" href="#">BlackJack V1.0</a> </div>
+		</nav>
+	</header> <!-- CATEGORIES -->
+	<main class="container p-5">
+		<br>
+		<h1>Juego del BlackJack</h1>
+		<div class="row">
+			<div class="col-md-6 col-12">
+				<h3 class="display-5 py-3">Crupier</h3>
+				<div id="cards-dealer" class="py-2">cartas</div>
+				<div id="score-dealer" class="py-2">Puntuación</div>
+				<div id="result-dealer" class="py-2">Resultado</div>
+			</div>
+			<div class="col-md-6 col-12">
+				<h3 class="display-5 py-3">Jugador</h3>
+				<div id="cards-player" class="py-2">cartas</div>
+				<div id="score-player" class="py-2">Puntuación</div>
+				<div id="result-player" class="py-2">Resultado</div>
+				<div id="player-buttons" style="margin-right: 10px;"> <button id="hit-button" type="button" class="btn btn-primary m-2"
+					onclick="partida.pedirCarta()">Nueva
+						carta</button>
+					<button id="stay-button" type="button" class="btn btn-primary m-2" onclick="partida.plantarse()">Me planto</button>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<button id="new-game-button" onclick="partida=nuevaPartida()" type="button" class="btn btn-primary">Nueva
+				partida</button>
+		</div>
+	</main>
+	<footer class="bg-dark text-white text-center p-3" id="footer"> Powered by <strong>Pablo Lizano Montalvo</strong>.
+	</footer>
+	<script>
+		let partida="";
+	</script>
+</body>
