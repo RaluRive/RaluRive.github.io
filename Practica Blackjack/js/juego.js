@@ -55,7 +55,7 @@ class Player {
     }
     actualizarPuntuacion() {
         let puntos = 0;
-
+        let ases=new Array;;
         this.mano.forEach(carta => {
             if (carta.valor != "A") {
                 puntos += carta.calcularValor(puntos);
@@ -64,9 +64,16 @@ class Player {
 
         this.mano.forEach(carta => {
             if (carta.valor == "A") {
+                ases.push(carta.calcularValor(puntos));
                 puntos += carta.calcularValor(puntos);
             }
         });
+        for (let i = 0; i < ases.length; i++) {
+            if (puntos>21 && ases[i]==11) {
+                puntos-=10;
+                ases[i]==1;
+            }
+        }
 
         this.puntuacion = puntos;
     }
