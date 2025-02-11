@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Registro</title>
+    <link rel="stylesheet" href="./css/formulario.css">
+</head>
+
+<body>
+    <nav class="menu">
+        <ul class="menu__list">
+            <img class="menu__list__img" src="./img/Logo.jpg" alt="logo de la pagina" onclick="location.href='./index.html'">
+            <li class="menu__list__item">Categorias</li>
+            <li class="menu__list__item">Juegos</li>
+            <li class="menu__list__item">Subir Run</li>
+            <li class="menu__list__item" onclick="location.href='./nosotros.html'">Nosotros</li>
+            <div class="menu__list__div">
+                <img class="list__div__img" src="./img/perfil.png" alt="placeholder">
+                <button class="list__div__button" type="button">Iniciar Sesion</button>
+            </div>
+        </ul>
+    </nav>
+    <main class="main">
+        <form action="" id="main__form">
+            <legend>Formulario de registro</legend>
+            <div class="form__completion">
+                <meter min="0" max="12" low="6" optimum="12" high="11" id="meter"></meter>
+            </div>
+            <div class="form__inputs">
+                <div class="form__inputs__name">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" required minlength="3">
+                </div>
+                <div class="form__inputs__email">
+                    <label for="correo">Correo</label>
+                    <input type="email" name="correo" id="correo" pattern="^([a-zA-Z0-9]{1,}@[a-zA-Z]{4,}).([a-zA-Z]{2,})$" required>
+                </div>
+                <div class="form__inputs__pais">
+                    <label for="pais">Pais de Nacimiento</label>
+                    <input type="text" name="pais" id="pais" required>
+                </div>
+                <div class="form__inputs__foto">
+                    <label for="foto">Foto de perfil</label>
+                    <input type="file" name="foto" id="foto" accept="image/*" required>
+                </div>
+                <div class="form__inputs__password">
+                    <label for="pass">Contraseña</label>
+                    <input type="password" name="pass" id="pass" minlength="8" required>
+                </div>
+                <div class="form__inputs__passwordConfirm">
+                    <label for="passconfirm">Confirmar Contraseña</label>
+                    <input type="password" name="passconfirm" id="passconfirm" required>
+                </div>
+                <br>
+                <input id="registro" class="form__button" type="submit" value="Registrarse">
+            </div>
+        </form>
+    </main>
+    <footer class="footer">
+        <div>Raúl Rivero Rodriguez</div>
+        <div id="fecha">Fecha y hora</div>
+        <div><a href="https://twitter.com"><img src="./img/logoTwitter.webp" alt="Logo de twitter"></a><a href="https://twitter.com"><img src="./img/logoTwitter.webp" alt="Logo de twitter"></a><a href="https://twitter.com"><img src="./img/logoTwitter.webp" alt="Logo de twitter"></a></div>
+    </footer>
+    <script src="./js/hora.js"></script>
+    <script src="./js/formulario.js"></script>
+</body>
+
+</html>
