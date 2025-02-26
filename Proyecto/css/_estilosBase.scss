@@ -1,0 +1,277 @@
+@use "./variables.scss" as *;
+
+.menu_activo{
+    opacity: 0.5;
+}
+body{
+    background-color: $colorBody;
+    position: absolute; 
+    margin: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    overflow-x: hidden;
+}
+.menu{
+    background-color: $colorPrincipal;
+    display: grid;
+    grid-area: menu;
+    position: sticky;
+    top: 0px;
+    z-index: 4;
+    grid:$gridListaMenu;
+    border-bottom: $bordeNegro;
+    height: 100%;
+}
+.menu__list{
+    grid-area: menulista;
+    list-style-type: none;
+    position: sticky;
+    display: grid;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    z-index: 3;
+    grid: $gridMenu;
+}
+.menu__list__div{
+    grid-area: registro;
+    text-align: center;
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-collapse: collapse;
+}
+.list__div__img{
+    align-self: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 25px;
+    display: block;
+}
+.list__div__container__button{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 1;
+}
+.list__div__button{
+    align-self: center;
+    width: 70%;
+    border-radius: 15px;
+    border: 0;
+    background-color: $colorFondo;
+    color: $colorLetrasBoton;
+}
+.list__div__button:hover{
+    background-color: $colorSecundario2;
+    cursor: pointer;
+}
+.menu__list__item:hover{
+    background-color: $colorSecundario1;
+    cursor: pointer;
+}
+@for $i from 1 to $elementosMenu+1 {
+    .menu__list__item:nth-of-type(#{$i}){
+        grid-area: $menuGridArea+$i;
+    }
+}
+.menu__icon{
+    display: none;
+    grid-area: icono;
+}
+.menu__icon:hover{
+    cursor: pointer;
+}
+.menu__list__img{
+    grid-area: imagen;
+    height: 80px;
+    width: 80px;
+    place-self: start start;
+    cursor: pointer;
+}
+.menu__list__item{
+    border-right:$bordeNegro;
+    font-family: $fuenteMenu;
+    line-height: 80px;
+    height: 100%;
+    font-size: 50px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer{
+    position: sticky;
+    grid-area: footer;
+    background-color: $colorPrincipal;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    bottom: 0;
+    z-index: 4;
+    border-top: $bordeNegro;
+    box-sizing: border-box;
+}
+.footer>div{
+    margin: 0 20px;
+}
+.footer>div:nth-of-type(3) img{
+    height: 30px;
+    width: 30px;
+    padding: 0 5px;
+}
+
+#breadcrumb{
+    position: absolute;
+    top: 81px;
+    right: 0%;
+    left: 0%;
+    text-align: center;
+    background-color: $colorPrincipal;
+    border-bottom: $bordeNegro;
+}
+
+@media screen and (max-width:#{$ordenador}) {
+    @keyframes animacionMenu{
+        from{
+            transform: translateX(calc(165px + $widthMenuTablet));
+        }
+        to{
+            transform: translateX(0);
+        }
+    }
+    .menu{
+        grid: $gridListaMenuTablet;
+    }
+    .menu__list__img{
+        height: $widthMenuTablet;
+        width: $widthMenuTablet;
+    }
+    .menu__icon{
+        grid-area: icono;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5em;
+        height: $widthMenuTablet;
+        width: $widthMenuTablet;
+    }
+    .menu__list{
+        display: none;
+        width: 165px;
+    }
+    .menu__list__div{
+        order: -1;
+        height: $widthMenuTablet;
+        width: 165px;
+        flex-direction: row;
+        border-left: $bordeNegro;
+        border-right: $bordeNegro;
+    }
+    .list__div__container__button{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .list__div__button{
+        width: 100%;
+    }
+    .list__div__img {
+        height: $widthMenuTablet;
+        width: $widthMenuTablet;
+        justify-self: center;
+    }
+    .menu__list__item{
+        border: $bordeNegro;
+        box-sizing: border-box;
+        width: calc(165px + $widthMenuTablet);
+        height: $widthMenuTablet;
+        background-color: $colorPrincipal;
+    }
+    .menu__list.click{
+        position: absolute;
+        display: flex;
+        flex-flow: column;
+        background-color: $colorPrincipal;
+        top: 0;
+        right: 0;
+        animation: $menuAnimacion;
+    }
+
+    #breadcrumb{
+        top: 61px;
+    }
+}
+@media screen and (max-width:#{$tablet}) {
+    @keyframes animacionMenu{
+        from{
+            transform: translateX(calc(165px + $widthMenuPequenio));
+        }
+        to{
+            transform: translateX(0);
+        }
+    }
+    .menu{
+        grid:$gridListaMenuPequenio;
+    }
+    .menu__list__img{
+        height: 40px;
+        width: 40px;
+    }
+    .menu__icon{
+        height: 40px;
+        width: 40px;
+        font-size: 2em;
+    }
+    
+    .menu__list{
+        width: 165px;
+    }
+    .menu__list.click{
+        animation: $menuAnimacion;
+    }
+    .menu__list__div{
+        order: -1;
+        height: $widthMenuPequenio;
+        width: 165px;
+        flex-direction: row;
+    }
+    .list__div__container__button{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .list__div__img {
+        height: $widthMenuPequenio;
+        width: $widthMenuPequenio;
+        justify-self: center;
+    }
+    .menu__list__item{
+        border: $bordeNegro;
+        border-collapse: collapse;
+        height: $widthMenuPequenio;
+        width: calc(165px + $widthMenuPequenio);
+    }
+    .footer{
+        flex-direction: row;
+        height: 100%;
+    }
+    .footer>div{
+        margin: 0;
+    }
+    .footer>div:nth-of-type(3) {
+        display: flex;
+        flex-flow: row;
+    }
+
+    #breadcrumb{
+        top: 41px;
+    }
+}
+*{
+    color: $colorLetras;
+}

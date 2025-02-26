@@ -1,0 +1,247 @@
+@use "./_variables.scss" as *;
+@use "./_estilosBase.scss";
+//Variables
+$gridPrincipal:"menu menu" 80px "aside main" 1fr "footer footer" 40px/25% 1fr;
+$gridTablet:"menu" 60px "main" 530px "aside" 1fr "footer" 40px/1fr;
+$gridPequenio:"menu" 40px "main" 530px "aside" 1fr "footer" 40px/1fr;
+$gridGaleria:"galeria1 galeria2 galeria3" 1fr/100% 100% 100%;
+$gridElementoGaleria:"texto video" 1fr/40% 1fr;
+$gridElementoGaleriaTablet:"texto" 250px "video" 250px/1fr;
+$gridElementoGaleriaPequenio:"texto" 350px "video" 150px/1fr;
+$galeriaTransicion:transform 1s linear 0s;
+$cargaAnimacion:cargarMain 1s ease-out 0s 1;
+$cargaAnimacionAside:cargarAside 1s ease-out 0s 1;
+$galeriaMedioTransicion:translateX(-100%) !important;
+$galeriaFinalTransicion:translateX(-200%) !important;
+$elementosGaleria:3;
+@keyframes cargarMain{
+    from{
+        opacity: 0%;
+    }
+    25%{
+        opacity: 75%;
+    }
+    to{
+        opacity: 100%;
+    }
+}
+
+@keyframes cargarAside{
+    from{
+        transform: translateX(-400px);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+body{
+    grid: $gridPrincipal;
+    
+}
+
+.main{
+    position: relative;
+    grid-area: main;
+    background-color: $colorPrincipal;
+    //margin: 20px 40px 20px 30px;
+    margin: 25px 40px 15px 30px;
+    animation: $cargaAnimacion;
+    overflow: hidden;
+}
+.main__movable{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid: $gridGaleria;
+    transform: translate(0);
+    transition: $galeriaTransicion;
+}
+.medio{
+    transform: $galeriaMedioTransicion;
+}
+.final{
+    transform: $galeriaFinalTransicion;
+}
+.main__left{
+    position: absolute;
+    background-color: $colorFondo;
+    color: white;
+    opacity: 50%;
+    width: 2%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0%;
+    top: 0;
+    cursor: pointer;
+    font-size: 1.4em;
+    z-index: 2;
+    transform: scale(1, 2.1);
+}
+
+.main__right{
+    position: absolute;
+    background-color: $colorFondo;
+    color: white;
+    opacity: 50%;
+    width: 2%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 98%;
+    top: 0;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 1.4em;
+    z-index: 2;
+    transform: scale(1, 2.1);
+}
+.main__div{
+    box-sizing: border-box;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid:$gridElementoGaleria;
+    padding: 0% 2%;
+}
+@for $i from 1 to $elementosMenu+1 {
+    #galeria#{$i}{
+        grid-area: galeria+$i;
+    }
+}
+.main__div__text{
+    grid-area: texto;
+    border-right: $bordeNegro;
+}
+
+.main__div__video{
+    grid-area: video;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main__div__video>img{
+    width: 80%;
+    height: 60%;
+}
+.main__div__text>div{
+    padding: 5%;
+}
+.main h1{
+    display: inline;
+}
+.main__div__img{
+    width: 150px;
+    height: 150px;
+}
+
+.main__div__video{
+    grid-area: video;
+}
+
+.aside{
+    grid-area: aside;
+    background-color: $colorPrincipal;
+    //margin: 20px;
+    margin: 25px 20px 15px 20px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(4,1fr);
+    animation: $cargaAnimacionAside;
+}
+.aside__div{
+    border-bottom: $bordeNegro;
+    padding-top: 5%;
+    padding-left: 1%;
+}
+
+.aside__div__img1{
+    float: left;
+    width: 60px;
+    height: 60px;
+    margin: -5% 2% 2% -1%;
+}
+
+.aside__div__img2{
+    float: right;
+    width: 60px;
+    height: 60px;
+    margin: -5% 0 2% 2%;
+}
+@media screen and (max-width:$ordenador){
+    body{
+        grid: $gridTablet;
+    }
+    .main{
+        //margin: 20px 5% 20px 5%;
+        margin: 25px 5% 15px 5%;
+        height: 500px;
+    }
+    .main__div{
+        grid: $gridElementoGaleriaTablet;
+        padding: 0% 3%;
+    }
+    .main__movable{
+        height: 500px;
+    }
+    .main__div__text{
+        height: 250px;
+        padding: 0 2% 0 0;
+        border-right: none;
+    }
+    .main__div__text>div{
+        display: inline;
+    }
+    .main__div__img{
+        width: 75px;
+        height: 75px;
+        display: inline;
+    }
+    .main__div__video{
+        border-top: $bordeNegro;
+    }
+    .main__div__video>img{
+        width: 55%;
+        height: 80%;
+    }
+    .main__left{
+        width: 5%;
+        top: 47%;
+        height: 6%;
+        font-size: 1.2em;
+    }
+    .main__right{
+        width: 5%;
+        left: 95%;
+        height: 6%;
+        top: 47%;
+        font-size: 1.2em;
+    }
+    .aside{
+        margin: 20px 5% 20px 5%;
+    }
+}
+@media screen and (max-width:$tablet){
+    body{
+        grid: $gridPequenio;
+    }
+    
+    .main__div__text{
+        height: 350px;
+        font-size: 0.8em;
+    }
+    
+}
+@media screen and (max-width:350px) {
+    .main__div{
+        grid: $gridElementoGaleriaPequenio;
+    }
+    .main__div__video>img{
+        width: 50%;
+        height: 60%;
+    }
+}
