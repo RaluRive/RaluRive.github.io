@@ -1,0 +1,60 @@
+@use "./_variables-dark.scss" as *;
+@use "./_estilosBase-dark.scss";
+//Variables
+$gridPrincipal:"menu menu menu" 80px ". main ." 1fr"footer footer footer" 40px/25% 1fr 25%;
+$gridTablet:"menu menu menu" 60px "main main main" 1fr"footer footer footer" 40px/25% 1fr 25%;
+
+
+body{
+    @include body-grid($gridPrincipal);
+}
+.menu__list__item:nth-of-type(4){
+    background-color: $colorSecundario1;
+}
+.main{
+    grid-area: main;
+    margin: 2% 5%;
+    padding: 5%;
+    background-color: $colorPrincipal;
+    overflow: hidden;
+}
+
+.main.loaded{
+    grid-area: main;
+    margin: 2% 5%;
+    padding: 5%;
+    background-color: $colorPrincipal;
+    overflow: hidden;
+}
+
+.main>h1{
+    font-family: $fuenteMenu;
+    font-weight: 100;
+    font-size: 4em;
+    margin: 0;
+    text-align: center;
+}
+
+.main>p{
+    font-family: $fuenteTexto;
+    font-size: 0.9em;
+    margin: 0;
+    text-align: center;
+}
+
+@media screen and (max-width:#{map-get($medidas,"ordenador")}) {
+    body{
+        grid: $gridTablet;
+    }
+    .main{
+        grid-area: main;
+        margin: 5% 5%;
+        background-color: $colorPrincipal;
+        padding: 5%;
+        overflow-y: auto;
+        padding-right: 2.51%;
+    }
+    .menu__list__div{
+        justify-content: space-around;
+    }
+}

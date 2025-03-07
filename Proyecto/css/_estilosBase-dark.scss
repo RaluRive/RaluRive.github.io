@@ -1,0 +1,257 @@
+@use "./variables-dark.scss" as *;
+@use "sass:map";
+
+
+.menu_activo{
+    opacity: 0.5;
+}
+
+*{
+    scrollbar-width: thin;
+    scrollbar-color: $colorFondo $colorPrincipal;
+}
+body{
+    background-color: $colorBody;
+    position: absolute; 
+    margin: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    overflow-x: hidden;
+}
+.menu{
+    background-color: $colorPrincipal;
+    display: grid;
+    grid-area: menu;
+    position: sticky;
+    top: 0px;
+    z-index: 4;
+    grid:$gridListaMenu;
+    border-bottom: $bordeNegro;
+    height: 100%;
+}
+.menu__list{
+    grid-area: menulista;
+    list-style-type: none;
+    position: sticky;
+    display: grid;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    z-index: 3;
+    grid: $gridMenu;
+}
+.menu__list__div{
+    grid-area: registro;
+    text-align: center;
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    border-collapse: collapse;
+    align-items: center;
+}
+.list__div__img{
+    align-self: center;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: block;
+}
+.list__div__container__button{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    height: 80%;
+}
+.list__div__button{
+    align-self: center;
+    width: 90%;
+    border: 0;
+    background-color: $colorFondo;
+    color: $colorLetrasBoton;
+}
+.list__div__button:hover{
+    background-color: $colorSecundario2;
+    cursor: pointer;
+}
+.menu__list__item:hover{
+    background-color: $colorSecundario1;
+    cursor: pointer;
+}
+@for $i from 1 to $elementosMenu+1 {
+    .menu__list__item:nth-of-type(#{$i}){
+        grid-area: $menuGridArea+$i;
+    }
+}
+.menu__icon{
+    display: none;
+    grid-area: icono;
+}
+.menu__icon:hover{
+    cursor: pointer;
+}
+.menu__list__img{
+    grid-area: imagen;
+    height: 80px;
+    width: 80px;
+    place-self: start start;
+    cursor: pointer;
+}
+.menu__list__item{
+    border-right:$bordeNegro;
+    font-family: $fuenteMenu;
+    line-height: 80px;
+    height: 100%;
+    font-size: 42px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer{
+    position: sticky;
+    grid-area: footer;
+    background-color: $colorPrincipal;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    bottom: 0;
+    z-index: 4;
+    border-top: $bordeNegro;
+    box-sizing: border-box;
+}
+.footer>div{
+    margin: 0 15px;
+    flex-basis: 40%;
+}
+.footer>div:nth-of-type(3){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 17%;
+}
+.footer>div:nth-of-type(3) img{
+    height: 30px;
+    width: 30px;
+    padding: 0 5px;
+}
+.footer>div:nth-of-type(4) {
+    margin-left: 15px !important;
+    margin-right: 0;
+    flex-basis: 3%;
+    >.fa-circle-half-stroke{
+        font-size: 30px;
+    }
+    order: -1;
+}
+.footer>div:nth-of-type(5) {
+    margin-right: 15px !important;
+    margin-left: 0;
+    flex-basis: 3%;
+    >.fa-language{
+        font-size: 30px;
+    }
+}
+.menu__list__item__icon {
+    display: none;
+}
+@media screen and (max-width:#{map-get($medidas,"ordenador")}) {
+    @keyframes animacionMenu{
+        from{
+            transform: translateX(calc(165px + $widthMenuTablet));
+        }
+        to{
+            transform: translateX(0);
+        }
+    }
+    .menu{
+        grid: $gridListaMenuTablet;
+    }
+    .menu__list__img{
+        height: $widthMenuTablet;
+        width: $widthMenuTablet;
+    }
+    .menu__icon{
+        grid-area: icono;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5em;
+        height: $widthMenuTablet;
+        width: $widthMenuTablet;
+    }
+    .menu__list{
+        display: none;
+        width: 165px;
+    }
+    .menu__list__div{
+        order: -1;
+        height: $widthMenuTablet;
+        width: 165px;
+        flex-direction: row;
+        border-left: $bordeNegro;
+        border-right: $bordeNegro;
+    }
+    .list__div__container__button{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .list__div__button{
+        width: 100%;
+    }
+    .list__div__img {
+        height: $widthMenuTablet;
+        width: $widthMenuTablet;
+        justify-self: center;
+    }
+    .menu__list__item{
+        border: $bordeNegro;
+        box-sizing: border-box;
+        width: calc(165px + $widthMenuTablet);
+        height: $widthMenuTablet;
+        background-color: $colorPrincipal;
+    }
+    .menu__list.click{
+        position: absolute;
+        display: flex;
+        flex-flow: column;
+        background-color: $colorPrincipal;
+        top: 0;
+        right: 0;
+        animation: $menuAnimacion;
+    }
+    .footer{
+        position: static;
+    }
+    .footer>div:nth-of-type(4) {
+        display: none;
+    }
+    .footer>div:nth-of-type(5) {
+        display: none;
+    }
+    .menu__list__item__icon {
+        border: $bordeNegro;
+        box-sizing: border-box;
+        width: calc(165px + $widthMenuTablet);
+        height: $widthMenuTablet;
+        background-color: $colorPrincipal;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 30px; 
+    }
+}
+@media screen and (max-width:#{map-get($medidas,"tablet")}) {
+    .footer>div{
+        margin: 0;
+    }
+}
+*{
+    color: $colorLetras;
+}

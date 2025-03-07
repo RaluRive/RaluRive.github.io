@@ -1,0 +1,88 @@
+{
+    "es": {
+        "menu": [
+            "Categorias",
+            "Juegos",
+            "Subir Run",
+            "Nosotros",
+            [
+                "Iniciar Sesion",
+                "Registrarse"
+            ]
+        ],
+        "aside": [
+            "Un jugador ha logrado un nuevo récord mundial en Super Mario 64, completando el juego en 1 hora, 37 minutos y 35 segundos en la categoría 120 estrellas. Este increíble logro fue posible gracias a nuevas estrategias de movimiento y optimización de rutas",
+            "Un nuevo glitch descubierto en The Legend of Zelda: Ocarina of Time permite a los speedrunners saltarse varias secciones clave del juego, reduciendo el tiempo de finalización en más de tres minutos. La comunidad ya está explorando cómo explotarlo al máximo.",
+            "El evento Awesome Games Done Quick 2025 concluyó con éxito, recaudando más de $3.2 millones para la Fundación Prevent Cancer. Durante el maratón, speedrunners completaron juegos clásicos y modernos a velocidades impresionantes, impresionando a miles de espectadores en todo el mundo.",
+            "Un jugador ha completado Dark Souls en solo 25 minutos, estableciendo un nuevo récord en la categoría Any%. Utilizando glitches como el \"wrong warp\" y el \"fall control skip\", evitó gran parte del juego y derrotó al jefe final en tiempo récord. La comunidad ya estudia mejoras para bajar aún más el tiempo."
+        ],
+        "main": [
+            {
+                "titulo": "Nuevo Récord Mundial en Super Mario 64",
+                "parrafos": [
+                    "El speedrunner conocido como Suigi ha logrado un nuevo récord mundial en Super Mario 64, completando la categoría de 120 estrellas en un impresionante tiempo de 1 hora, 37 minutos y 35 segundos. Este tiempo mejora la marca anterior en varios segundos, lo que en la comunidad de speedruns representa una diferencia considerable.",
+                    "El récord se logró gracias a la ejecución perfecta de varios trucos avanzados, como el BLJ (Backwards Long Jump) para atravesar ciertas áreas más rápido y la optimización de movimientos en niveles complejos como Rainbow Ride y Tick Tock Clock. Además, el jugador refinó su ruta para reducir tiempos de carga y mejorar la eficiencia de cada estrella recolectada.",
+                    "La comunidad de speedrunners sigue atenta a posibles mejoras en esta categoría, con algunos jugadores explorando estrategias aún más agresivas para optimizar los tiempos."
+                ]
+            },
+            {
+                "titulo": "Nuevo Glitch en The Legend of Zelda: Ocarina of Time",
+                "parrafos": [
+                    "La comunidad de speedrunners de The Legend of Zelda: Ocarina of Time ha descubierto un nuevo glitch que permite a los jugadores saltarse secciones enteras del juego, reduciendo los tiempos de finalización en más de tres minutos en la categoría Any%.",
+                    "El glitch, denominado \"Void Warp Skip\", permite a los jugadores teletransportarse a diferentes áreas del juego al manipular la física del motor gráfico en ciertas zonas. Esta técnica se activa al realizar un conjunto preciso de acciones en el Templo del Espíritu, causando que Link atraviese el mapa de forma inesperada.",
+                    "Este descubrimiento podría redefinir el récord mundial de la categoría Any%, ya que los runners ahora están optimizando el uso del glitch para reducir aún más sus tiempos. Con la comunidad trabajando en nuevas estrategias, es solo cuestión de tiempo antes de que veamos otro récord caer."
+                ]
+            },
+            {
+                "titulo": "Games Done Quick 2025 Recauda Más de 3.2 Millones de dolares",
+                "parrafos": [
+                    "El evento benéfico Awesome Games Done Quick 2025 (AGDQ) concluyó con gran éxito, logrando una recaudación récord de más de $3.2 millones para la Fundación Prevent Cancer. Durante una semana, speedrunners de todo el mundo mostraron su talento al completar videojuegos de todas las épocas a velocidades impresionantes, mientras los espectadores donaban en apoyo a la causa.",
+                    "El evento fue transmitido en vivo a través de Twitch, con miles de espectadores apoyando con sus donaciones y comentarios en tiempo real. La comunidad de speedrunners ya se prepara para Summer Games Done Quick 2025, que se celebrará a mediados de año con otra serie de carreras y récords impresionantes."
+                ]
+            }
+        ]
+    },
+    "en": {
+        "menu": [
+            "Categories",
+            "Games",
+            "Upload Run",
+            "About Us",
+            [
+                "Sign In",
+                "Sign Up"
+            ]
+        ],
+        "aside": [
+            "A player has achieved a new world record in Super Mario 64, completing the game in 1 hour, 37 minutes and 35 seconds in the 120-star category. This incredible achievement was made possible by new movement strategies and route optimization.",
+            "A new glitch discovered in The Legend of Zelda: Ocarina of Time allows speedrunners to skip several key sections of the game, reducing the completion time by over three minutes. The community is already exploring how to exploit it to its full potential.",
+            "The Awesome Games Done Quick 2025 event concluded successfully, raising over $3.2 million for the Prevent Cancer Foundation. During the marathon, speedrunners completed classic and modern games at impressive speeds, impressing thousands of spectators around the world.",
+            "A player has completed Dark Souls in just 25 minutes, setting a new record in the Any% category. Using glitches such as the \"wrong warp\" and the \"fall control skip\", he bypassed much of the game and defeated the final boss in record time. The community is already looking into improvements to lower the time even further."
+        ],
+        "main": [
+            {
+                "titulo": "New World Record in Super Mario 64",
+                "parrafos": [
+                    "Speedrunner Suigi has set a new world record in Super Mario 64, completing the 120-star category in an impressive time of 1 hour, 37 minutes and 35 seconds. This time beats the previous mark by several seconds, which in the speedrunning community is a considerable difference.",
+                    "The record was achieved thanks to the perfect execution of several advanced tricks, such as the BLJ (Backwards Long Jump) to traverse certain areas faster and the optimization of movements in complex levels such as Rainbow Ride and Tick Tock Clock. In addition, the player refined his route to reduce loading times and improve the efficiency of each star collected.",
+                    "The speedrunning community continues to be on the lookout for possible improvements in this category, with some players exploring even more aggressive strategies to optimize times."
+                ]
+            },
+            {
+                "titulo": "New Glitch in The Legend of Zelda: Ocarina of Time",
+                "parrafos": [
+                    "The Legend of Zelda: Ocarina of Time speedrunning community has discovered a new glitch that allows players to skip entire sections of the game, reducing completion times by over three minutes in the Any% category.",
+                    "The glitch, dubbed \"Void Warp Skip,\" allows players to teleport to different areas of the game by manipulating the engine's physics in certain areas. This technique is triggered by performing a precise set of actions in the Spirit Temple, causing Link to traverse the map unexpectedly.",
+                    "This discovery could redefine the world record for the Any% category, as runners are now optimising their use of the glitch to further reduce their times. With the community working on new strategies, it’s only a matter of time before we see another record fall."
+                ]
+            },
+            {
+                "titulo": "Games Done Quick 2025 Raises Over $3.2 Million",
+                "parrafos": [
+                    "The Awesome Games Done Quick 2025 (AGDQ) charity event concluded with great success, raising a record-breaking $3.2 million for the Prevent Cancer Foundation. For one week, speedrunners from around the world showcased their talent by completing video games from all eras at impressive speeds, while spectators donated in support of the cause.",
+                    "The event was streamed live on Twitch, with thousands of viewers supporting with their donations and comments in real time. The speedrunning community is already preparing for Summer Games Done Quick 2025, which will take place in the middle of the year with another series of races and impressive records."
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,93 @@
+@use "./_variables.scss" as *;
+@use "./_estilosBase.scss";
+//Variables
+$gridPrincipal:"menu menu menu" 80px ". form ." 1fr "footer footer footer" 40px/25% 1fr 25%;
+$gridTablet:"menu menu menu" 60px "form form form" 1fr "footer footer footer" 60px/60px 1fr 25%;
+
+
+body{
+    @include body-grid($gridPrincipal);
+}
+.menu__list__div{
+    justify-content: space-evenly;
+}
+.main{
+    grid-area: form;
+    margin: 4% 2%;
+    background-color: $colorPrincipal;
+    padding: 5%;
+}
+.list__div__button{
+    width: 65%;
+}
+#main__form>legend{
+    font-family: $fuenteMenu;
+    font-size: 4em;
+    text-align: center;
+}
+
+.form__completion{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.form__completion>meter{
+    width: 80%;
+    background-color: $colorPrincipal;
+}
+.form__inputs{
+    display: flex;
+    flex-direction: column;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.form__inputs>div{
+    margin: 2% 0;
+    font-family: $fuenteTexto;
+    font-size: 1.1em;
+    letter-spacing: -2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    button{
+        position: relative;
+    }
+    [type=file]{
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+        right: 0;
+        z-index: -1;
+    }
+}
+
+.form__button{
+    align-self: center;
+    width: 120px;
+    border: 0;
+    background-color: $colorFondo;
+    color: $colorPrincipal;
+    font-family: $fuenteTexto;
+    font-size: 0.9em;
+}
+.form__button:hover{
+    background-color: $colorSecundario2;
+    cursor: pointer;
+}
+
+@media screen and (max-width:#{map-get($medidas,"ordenador")}) {
+    body{
+        grid: $gridTablet;
+    }
+    .main{
+        grid-area: form;
+        margin: 5% 5%;
+        background-color: $colorPrincipal;
+        padding: 5%;
+    }
+    .menu__list__div{
+        justify-content: space-around;
+    }
+}

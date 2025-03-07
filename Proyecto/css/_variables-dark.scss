@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Micro+5&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jersey+15&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Barcode+39&family=Silkscreen:wght@400;700&display=swap");
+//Variables
+$colorFondo: black;
+$colorLetrasBoton: rgb(192, 192, 192);
+
+$colorBody: black;
+$colorLetras: rgb(225, 225, 225);
+$colorPrincipal: #3a3a3a;
+$colorSecundario1: #1f1e1e;
+$colorSecundario2: rgb(37, 37, 37);
+
+$gridMenu: "item1 item2 item3 item4 registro" 80px/1fr 1fr 1fr 1fr 1fr;
+$gridListaMenu: "imagen menulista menulista" 80px /80px 1fr 80px;
+$gridListaMenuTablet: "imagen menulista icono" 60px /60px 1fr 60px;
+$gridListaMenuPequenio: "imagen menulista icono" 40px /40px 1fr 40px;
+$menuGridArea: item;
+$elementosMenu: 4;
+
+$fuenteMenu: "Jersey 15", Arial;
+$fuenteTexto: "Silkscreen", Arial;
+
+$bordeNegro: 1px solid $colorFondo;
+$medidas: (
+    "ordenador": 992px,
+    "tablet": 576px
+);
+$widthMenuTablet: 60px;
+$widthMenuPequenio: 40px;
+
+$menuAnimacion: animacionMenu 0.3s linear 0s 1;
+
+@mixin body-grid($grid) {
+    grid: $grid;
+}

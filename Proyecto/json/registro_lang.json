@@ -1,0 +1,51 @@
+{
+    "es": {
+        "menu":[
+            "Categorias",
+            "Juegos",
+            "Subir Run",
+            "Nosotros",
+            [
+                "Iniciar Sesion"
+            ]
+        ],
+        "tituloFormulario":"Formulario de registro",
+        "formulario": [
+            "Nombre",
+            "Correo",
+            "Pais de Nacimiento",
+            [
+                "Foto de perfil",
+                "Selecciona una foto"
+            ],
+            "Contraseña",
+            "Confirmar Contraseña",
+            "Registrarse"
+        ]
+    },
+    "en": {
+        "menu": [
+            "Categories",
+            "Games",
+            "Upload Run",
+            "About Us",
+            [
+                "Sign In",
+                "Sign Up"
+            ]
+        ],
+        "tituloFormulario":"Register form",
+        "formulario": [
+            "Name",
+            "Email",
+            "Country of origin",
+            [
+                "Profile picture",
+                "Select a picture"
+            ],
+            "Password",
+            "Confirm Password",
+            "Sign Up"
+        ]
+    }
+}
