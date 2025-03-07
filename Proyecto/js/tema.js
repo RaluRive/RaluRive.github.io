@@ -18,20 +18,20 @@ function cambiarTema() {
 
 document.addEventListener("DOMContentLoaded", () => {
     if (localStorage.getItem("tema") === null) {
-        localStorage.setItem("tema", "oscuro");
+        localStorage.setItem("tema", "claro");
         cambiarTema();
     } else {
         cambiarTema();
-        document.querySelectorAll(".fa-circle-half-stroke").forEach(element => {
-            element.addEventListener("click", () => {
-                if (localStorage.getItem("tema") == "oscuro") {
-                    localStorage.setItem("tema", "claro");
-                    cambiarTema();
-                } else {
-                    localStorage.setItem("tema", "oscuro");
-                    cambiarTema();
-                }
-            })
-        });
     }
+    document.querySelectorAll(".fa-circle-half-stroke").forEach(element => {
+        element.addEventListener("click", () => {
+            if (localStorage.getItem("tema") == "oscuro") {
+                localStorage.setItem("tema", "claro");
+                cambiarTema();
+            } else {
+                localStorage.setItem("tema", "oscuro");
+                cambiarTema();
+            }
+        })
+    });
 })
