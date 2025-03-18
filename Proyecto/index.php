@@ -19,6 +19,9 @@
  tener una base de datos para almacenar los videos y noticias sobre los speedruns. Tambien podria finalizar la 
  traduccion de todos los sitios y añadir otros idiomas o incluir mas funcionalidad a la pagina -->
 <body>
+    <?php
+echo "Hola";
+    ?>
     <nav class="menu">
         <img class="menu__list__img" src="./img/Logo.jpg" alt="logo de la pagina">
         <ul class="menu__list">
