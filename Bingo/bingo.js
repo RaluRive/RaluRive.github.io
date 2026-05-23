@@ -1,5 +1,5 @@
 
-let listaNumeros = Array(100);
+let listaNumeros = Array(90);
 let numerosSacados= Array();
 let numerosRandomizados;
 let tachar=document.createElement("p");
@@ -8,13 +8,13 @@ tachar.style.position="absolute";
 tachar.style.fontSize="2.6em";
 tachar.style.fontFamily="Arial";
 let empezado=false;
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < listaNumeros.length; i++) {
     listaNumeros[i] = i + 1;
 }
 function sacarNumero() {
     if (numerosRandomizados.length>0) {
         let sacado=numerosRandomizados.shift();
-        document.getElementById(sacado).append(tachar.cloneNode(true))
+        document.getElementById(sacado).style="backgroundcolor:red"
         numerosSacados.push(sacado);
         document.getElementById("sacado").innerHTML=sacado;
         if (!empezado) {
@@ -26,13 +26,13 @@ function sacarNumero() {
         }
         
     }else{
-        alert("No quedan vas numeros");
+        alert("No quedan mas numeros");
     }
 }
 
 function randomizarArray(array) {
     let arrayDesordenado=Array();
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 90; i++) {
         let index=Math.round(Math.random()*array.length-1);      
         arrayDesordenado.push(array.splice(index,1)[0]);
     }
