@@ -2,11 +2,6 @@
 let listaNumeros = Array(90);
 let numerosSacados= Array();
 let numerosRandomizados;
-let tachar=document.createElement("p");
-tachar.innerHTML="X";
-tachar.style.position="absolute";
-tachar.style.fontSize="2.6em";
-tachar.style.fontFamily="Arial";
 let empezado=false;
 for (let i = 0; i < listaNumeros.length; i++) {
     listaNumeros[i] = i + 1;
@@ -14,7 +9,7 @@ for (let i = 0; i < listaNumeros.length; i++) {
 function sacarNumero() {
     if (numerosRandomizados.length>0) {
         let sacado=numerosRandomizados.shift();
-        document.getElementById(sacado).style="backgroundcolor:red"
+        document.getElementById(sacado).style.backgroundColor="red"
         numerosSacados.push(sacado);
         document.getElementById("sacado").innerHTML=sacado;
         if (!empezado) {
