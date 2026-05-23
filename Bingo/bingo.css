@@ -1,0 +1,55 @@
+
+#tabla{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+    left: 50%;
+    min-width: 300px;
+    min-height: 300px;
+    transform: translate(-50%, 20%);
+}
+
+.numero{
+    box-sizing: border-box;
+    width: 10%;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.numero:nth-child(10n){
+    border-right: 1px solid black;
+}
+.numero:nth-last-child(-n+10){
+    border-bottom: 1px solid black;
+}
+.botonJuego{
+    position: relative;
+    transform: translate(-50%,80px);
+    left: 50%;
+}
+#sacado{
+    position: relative;
+    padding: 0;
+    margin: 0;
+    font-size: 3em;
+    color: red;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%,80px);
+}
+#numerosSacados{
+    position: relative;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    left: 50%;
+    width: fit-content;
+    max-width: 350px;
+    text-align: center;
+    transform: translate(-50%,80px);
+    padding: 3px;
+}
