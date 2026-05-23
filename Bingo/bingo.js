@@ -9,7 +9,7 @@ for (let i = 0; i < listaNumeros.length; i++) {
 function sacarNumero() {
     if (numerosRandomizados.length>0) {
         let sacado=numerosRandomizados.shift();
-        document.getElementById(sacado).style.backgroundColor="#ff0000"
+        document.getElementById(sacado).style.color="#ff0000"
         numerosSacados.push(sacado);
         document.getElementById("sacado").innerHTML=sacado;
         if (!empezado) {
